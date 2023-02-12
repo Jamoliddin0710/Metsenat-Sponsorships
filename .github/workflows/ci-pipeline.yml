@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 7.0.x
     - name: Restore dependencies
-      run: dotnet restore src/Metsenat-Sponsorships.sln
+      run: dotnet restore . .
     - name: Build
       run: dotnet build ./Metsenat.Api/Metsenat.Api.csproj ./Metsenat.Data/Metsenat.Data.csproj --no-restore
     - name: Test
-      run: dotnet test src/Metsenat-Sponsorships.sln --no-build --verbosity normal
+      run: dotnet test . . --no-build --verbosity normal
