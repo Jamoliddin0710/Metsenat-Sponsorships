@@ -1,22 +1,27 @@
 import styled from "styled-components";
 
 const HeadWrapper = styled.div`
-.head{
-    background: #FFFFFF;
-    padding: 30px;
+  .head {
+    background: #fcfcfc;
+    padding: 30px 80px;
+    a {
+      text-decoration: none;
+    }
+    .headCh {
+      color: #ffffff;
+    }
     .headDiv {
-    background: #e8e8e8;
-    border-radius: 5px;
-    .headInt {
+      background: #e8e8e8;
+      border-radius: 5px;
+      .headInt {
         background: #e8e8e8;
+      }
+    }
+    .headBut {
+      background: #edf1fd;
+      color: #3365fc;
     }
   }
-  .headBut {
-    background: #EDF1FD;
-    color: #3365FC;
-  }
-} 
-  
 `;
 
 export default HeadWrapper;

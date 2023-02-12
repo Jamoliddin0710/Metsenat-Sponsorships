@@ -10,7 +10,7 @@ import HeaderWrapper from "../style/HeaderWrapper";
 const Header = () => {
   return (
     <HeaderWrapper>
-      <div className="head d-flex justify-content-between align-items-center bg-secondary">
+      <div className="head d-flex justify-content-between align-items-center">
         <div className="logo">
           <img src={logoPro} alt="metsenat pro" />
         </div>

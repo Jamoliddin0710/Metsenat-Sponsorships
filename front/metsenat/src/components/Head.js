@@ -2,11 +2,12 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter, faSearch } from "@fortawesome/free-solid-svg-icons";
 import HeadWrapper from "../style/HeadWrapper";
+import { Link } from "react-router-dom";
 
 const Head = () => {
   return (
     <HeadWrapper>
-      <div className="container head d-flex justify-content-between">
+      <div className="head d-flex justify-content-between">
         <div className="left">
           <div
             class="btn-group"
@@ -22,7 +23,7 @@ const Head = () => {
               checked
             />
             <label class="btn btn-outline-primary p-2 ps-5 pe-5" for="btnradio1">
-              Dashboard
+              <Link to={"/dashboard"} className="headCh">Dashboard</Link>
             </label>
 
             <input
@@ -33,7 +34,7 @@ const Head = () => {
               autocomplete="off"
             />
             <label class="btn btn-outline-primary p-2 ps-5 pe-5" for="btnradio2">
-              Homiylar
+              <Link to={"/homiylar"}>Homiylar</Link>
             </label>
 
             <input
@@ -44,7 +45,7 @@ const Head = () => {
               autocomplete="off"
             />
             <label class="btn btn-outline-primary p-2 ps-5 pe-5" for="btnradio3">
-              Talabalar
+              <Link to={"/talabalar"}>Talabalar</Link>
             </label>
           </div>
         </div>

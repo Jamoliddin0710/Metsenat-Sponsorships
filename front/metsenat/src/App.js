@@ -1,7 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Chart from "./components/Chart";
 import Login from "./components/Login";
 import Home from "./containers/Home";
+import Dashboard from "./pages/Dashboard";
+import Homiylar from "./pages/Homiylar";
 
 function App() {
   return (
@@ -17,6 +20,8 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/homiylar" element={<Homiylar />} />
       </Routes>
     </div>
   );

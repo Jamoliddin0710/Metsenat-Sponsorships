@@ -8,8 +8,6 @@ import Head from "./Head";
 const Login = () => {
   return (
     <LoginWrapper>
-    <Header/>
-    <Head />
       <div className="container w-25">
         <div className="logo">
           <img src={logo} alt="metsenat club" className="w-100 p-4" />
