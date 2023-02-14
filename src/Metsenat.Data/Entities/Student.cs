@@ -10,11 +10,10 @@ public class Student
     public string? FullName { get; set; }
     [Required]
     public string? PhoneNumber { get; set; }
-    public int UniversityId { get; set; }
-    [ForeignKey(nameof(UniversityId))]
-    public virtual University? University { get; set; }
+    [Required]
+    public string? UniversityName { get; set; }
     public EStudentDegree StudentDegree { get; set; }
     public decimal DedicatedAmount { get; set; }
     public decimal AmountOfStudentsContract { get; set; }
-    public ICollection<SponsorStudent>? SponsorStudents { get; set; }
+    public virtual ICollection<SponsorStudent>? SponsorStudents { get; set; }
 }
