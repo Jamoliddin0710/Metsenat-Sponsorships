@@ -7,8 +7,8 @@ public class SponsorStudent
     public int Id { get; set; }
     public int StudentId { get; set; }
     [ForeignKey(nameof(StudentId))]
-    public Student? Student { get; set; }
+    public virtual Student? Student { get; set; }
     public int SponsorId { get; set; }
     [ForeignKey(nameof(SponsorId))]
-    public Sponsor? Sponsor { get; set; }
+    public virtual Sponsor? Sponsor { get; set; }
 }

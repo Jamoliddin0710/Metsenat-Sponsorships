@@ -3,17 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metsenat.Api", "Metsenat.Api\Metsenat.Api.csproj", "{08FFBF89-EE0C-43C0-BCCA-4D7045361CE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metsenat.Api", "Metsenat.Api\Metsenat.Api.csproj", "{08FFBF89-EE0C-43C0-BCCA-4D7045361CE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metsenat.Data", "Metsenat.Data\Metsenat.Data.csproj", "{E85FD290-2D1B-4853-BE85-D3CFCED5380C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metsenat.Data", "Metsenat.Data\Metsenat.Data.csproj", "{E85FD290-2D1B-4853-BE85-D3CFCED5380C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metsenat.BLL", "Metsenat.BLL\Metsenat.BLL.csproj", "{03EB5CE4-A09E-4649-8AD8-880680B533E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{08FFBF89-EE0C-43C0-BCCA-4D7045361CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +23,15 @@ Global
 		{E85FD290-2D1B-4853-BE85-D3CFCED5380C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E85FD290-2D1B-4853-BE85-D3CFCED5380C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E85FD290-2D1B-4853-BE85-D3CFCED5380C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03EB5CE4-A09E-4649-8AD8-880680B533E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03EB5CE4-A09E-4649-8AD8-880680B533E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03EB5CE4-A09E-4649-8AD8-880680B533E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03EB5CE4-A09E-4649-8AD8-880680B533E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B82FC2CD-B631-47AC-8DFA-8DC82C00271C}
 	EndGlobalSection
 EndGlobal
