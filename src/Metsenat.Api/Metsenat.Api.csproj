@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Metsenat.BLL\Metsenat.BLL.csproj" />
     <ProjectReference Include="..\Metsenat.Data\Metsenat.Data.csproj" />
   </ItemGroup>
 
