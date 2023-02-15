@@ -54,7 +54,5 @@ namespace Metsenat.BLL.Repositories
             _context.Sponsors.Update(sponsor);
             await _context.SaveChangesAsync();
         }
-
-
     }
 }
