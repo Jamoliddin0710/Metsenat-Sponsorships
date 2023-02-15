@@ -1,7 +1,9 @@
 ﻿using Mapster;
 using Metsenat.BLL.Dto;
+using Metsenat.BLL.View;
 using Metsenat.Data.Data;
 using Metsenat.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +21,7 @@ namespace Metsenat.BLL.Repositories
             _context = context;
         }
 
-        public async Task CreateSponsor(CreatesponsorDto createsponsorDto)
+        public async Task CreateSponsor(CreateSponsorDto createsponsorDto)
         {
             var sponsor = createsponsorDto.Adapt<Sponsor>();
             await _context.Sponsors.AddAsync(sponsor);
@@ -33,15 +35,16 @@ namespace Metsenat.BLL.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public Task GetSponsor()
+        public async Task<List<GetSponsorView>> GetSponsor()
         {
-            throw new NotImplementedException();
+            var sponsors = await _context.Sponsors.ToListAsync();
+            return sponsors.Adapt<List<GetSponsorView>>();
         }
 
-        public async Task<Sponsor> GetSponsorById(int sponsorId)
+        public async Task<GetSponsorView> GetSponsorById(int sponsorId)
         {
             var sponsor = await _context.Sponsors.FindAsync(sponsorId);
-            return sponsor;
+            return sponsor.Adapt<GetSponsorView>();
         }
 
         public async Task UpdateSponsor(int sponsorId, UpdateSponsorDto updateSponsorDto)
@@ -51,7 +54,5 @@ namespace Metsenat.BLL.Repositories
             _context.Sponsors.Update(sponsor);
             await _context.SaveChangesAsync();
         }
-
-
     }
 }
