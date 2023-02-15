@@ -5,10 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metsenat.BLL.Dto
+namespace Metsenat.BLL.DTOs;
+public class UpdateSponsorDto
 {
-    public class UpdateSponsorDto
-    {
-        public ESponsorType SponsorStatus { get; set; }
-    }
+    public ESponsorType SponsorStatus { get; set; }
 }
