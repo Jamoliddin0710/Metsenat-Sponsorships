@@ -41,7 +41,7 @@ public class StudentRepository : IStudentRepository
         var student = await _context.Students.FirstOrDefaultAsync(s => s.Id == studentId);
 
         if (student is null)
-            throw new Exception();
+            throw new Exception(); //todo exeception handling
 
         return student;
     }
