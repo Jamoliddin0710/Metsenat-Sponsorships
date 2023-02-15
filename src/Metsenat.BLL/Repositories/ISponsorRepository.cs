@@ -14,7 +14,7 @@ namespace Metsenat.BLL.Repositories
     {
         Task GetSponsor();
         Task<Sponsor> GetSponsorById(int sponsorId);
-        Task CreateSponsor(CreatesponsorDto createsponsorDto);
+        Task CreateSponsor(CreateSponsorDto createsponsorDto);
         Task UpdateSponsor(int sponsorId , UpdateSponsorDto updateSponsorDto);
         Task DeleteSponsor(int sponsorId);
         
