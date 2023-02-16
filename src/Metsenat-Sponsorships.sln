@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metsenat.Api", "Metsenat.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metsenat.Data", "Metsenat.Data\Metsenat.Data.csproj", "{E85FD290-2D1B-4853-BE85-D3CFCED5380C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metsenat.BLL", "Metsenat.BLL\Metsenat.BLL.csproj", "{03EB5CE4-A09E-4649-8AD8-880680B533E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metsenat.BLL", "Metsenat.BLL\Metsenat.BLL.csproj", "{03EB5CE4-A09E-4649-8AD8-880680B533E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
