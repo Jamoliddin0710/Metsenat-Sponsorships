@@ -1,6 +1,6 @@
 ﻿using Mapster;
 using Metsenat.BLL.DTOs;
-using Metsenat.BLL.View;
+using Metsenat.BLL.ViewModels;
 using Metsenat.Data.Data;
 using Metsenat.Data.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -34,16 +34,16 @@ public class SponsorRepository : ISponsorRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task<List<GetSponsorView>> GetSponsor()
+    public async Task<List<SponsorView>> GetSponsor()
     {
         var sponsors = await _context.Sponsors.ToListAsync();
-        return sponsors.Adapt<List<GetSponsorView>>();
+        return sponsors.Adapt<List<SponsorView>>();
     }
 
-    public async Task<GetSponsorView> GetSponsorById(int sponsorId)
+    public async Task<SponsorView> GetSponsorById(int sponsorId)
     {
         var sponsor = await _context.Sponsors.FindAsync(sponsorId);
-        return sponsor.Adapt<GetSponsorView>();
+        return sponsor.Adapt<SponsorView>();
     }
 
     public async Task UpdateSponsor(int sponsorId, UpdateSponsorDto updateSponsorDto)

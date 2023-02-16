@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Metsenat.BLL.View
+namespace Metsenat.BLL.ViewModels
 {
-    public class GetSponsorView
+    public class SponsorView
     {
         public string? FullName { get; set; }
         public string? PhoneNumber { get; set; }

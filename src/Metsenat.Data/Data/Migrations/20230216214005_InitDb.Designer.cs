@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Metsenat.Data.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230214215526_Init")]
-    partial class Init
+    [Migration("20230216214005_InitDb")]
+    partial class InitDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,6 +52,40 @@ namespace Metsenat.Data.Data.Migrations
                     b.HasIndex("SponsorId");
 
                     b.ToTable("Payments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 1000m,
+                            PaymentStatus = 2,
+                            PaymentType = 2,
+                            SponsorId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Amount = 350m,
+                            PaymentStatus = 0,
+                            PaymentType = 2,
+                            SponsorId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Amount = 2000m,
+                            PaymentStatus = 0,
+                            PaymentType = 0,
+                            SponsorId = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Amount = 6000m,
+                            PaymentStatus = 0,
+                            PaymentType = 1,
+                            SponsorId = 3
+                        });
                 });
 
             modelBuilder.Entity("Metsenat.Data.Entities.Sponsor", b =>
@@ -79,6 +113,31 @@ namespace Metsenat.Data.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Sponsors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            FullName = "John Doe",
+                            PhoneNumber = "+9989093416234",
+                            SponsorType = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            FullName = "Kevin Jhonson",
+                            OrganizationName = "Henkel",
+                            PhoneNumber = "+912342326234",
+                            SponsorType = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FullName = "Harry Wick",
+                            OrganizationName = "P&G",
+                            PhoneNumber = "+493434226234",
+                            SponsorType = 1
+                        });
                 });
 
             modelBuilder.Entity("Metsenat.Data.Entities.SponsorStudent", b =>
