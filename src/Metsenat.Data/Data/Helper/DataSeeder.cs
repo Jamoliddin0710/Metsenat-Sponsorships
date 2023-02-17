@@ -70,7 +70,7 @@ public static class DataSeeder
         });
         #endregion
 
-        /*#region Students
+        #region Students
         builder.Entity<Student>().HasData(new Student()
         {
             Id = 1,
@@ -80,21 +80,6 @@ public static class DataSeeder
             DedicatedAmount = 8000,
             StudentDegree = EStudentDegree.Bachelors,
             UniversityName = "University Of Europe",
-            SponsorStudents = new List<SponsorStudent>
-            {
-                new SponsorStudent
-                {
-                    Id = 1,
-                    SponsorId = 1,
-                    StudentId = 1,
-                },
-                new SponsorStudent
-                {
-                    Id = 2,
-                    StudentId = 1,
-                    SponsorId = 2,
-                }
-            }
         });
 
         builder.Entity<Student>().HasData(new Student()
@@ -106,22 +91,7 @@ public static class DataSeeder
             DedicatedAmount = 7500,
             StudentDegree = EStudentDegree.Masters,
             UniversityName = "UIBH",
-            SponsorStudents = new List<SponsorStudent>
-            {
-                new SponsorStudent
-                {
-                    Id = 3,
-                    StudentId = 2,
-                    SponsorId = 1,
-                },
-                new SponsorStudent
-                {
-                    Id = 4,
-                    StudentId = 2,
-                    SponsorId = 2,
-                }
-            }
         });
-        #endregion*/
+        #endregion
     }
 }
