@@ -7,9 +7,9 @@ public class UpdateStudentDto
     [Required]
     public string? FullName { get; set; }
     [Required]
-    public string? Phone { get; set; }
+    public string? PhoneNumber { get; set; }
     [Required]
     public string? UniversityName { get; set; }
     public EStudentDegree StudentDegree { get; set; }
-    public string? AmountOfStudentsContract { get; set; }
+    public decimal? AmountOfStudentsContract { get; set; }
 }
