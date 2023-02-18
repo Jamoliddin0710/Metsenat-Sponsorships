@@ -34,7 +34,9 @@ const Login = () => {
             </div>
             <img src={recapt} alt="recapt" className="p-2" />
           </div>
-          <button className="btn btn-primary w-100 mt-3">Kirish</button>
+          <Link to={"/dashboard"}>
+            <button className="btn btn-primary w-100 mt-3">Kirish</button>
+          </Link>
         </div>
       </div>
     </LoginWrapper>

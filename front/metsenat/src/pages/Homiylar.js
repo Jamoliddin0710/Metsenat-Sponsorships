@@ -5,14 +5,26 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../containers/Header";
 import BrandWrapper from "../style/BrandWrapper";
 import HeadWrapper from "../style/HeadWrapper";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import Dropdown from "react-bootstrap/Dropdown";
+import DatePicker from "react-date-picker";
+
+function MyApp() {
+  const [value, onChange] = useState(new Date());
+
+  return (
+    <BrandWrapper>
+      <div className="date">
+        <DatePicker onChange={onChange} value={value} />
+      </div>
+    </BrandWrapper>
+  );
+}
 
 function MyVerticallyCenteredModal(props) {
   return (
@@ -29,15 +41,14 @@ function MyVerticallyCenteredModal(props) {
         <BrandWrapper>
           <div className="sec-1">
             <p className="mb-2 modTitle">Ariza holati</p>
-            
-              <select className="modInt custom-select " id="inputGroupSelect02">
-                <option selected>Barchasi</option>
-                <option value="1">Yangi</option>
-                <option value="2">Moderatsiyada</option>
-                <option value="3">Tasdiqlangan</option>
-                <option value="4">Bekor qilingan</option>
-              </select>
-            
+
+            <select className="modInt custom-select " id="inputGroupSelect02">
+              <option selected>Barchasi</option>
+              <option value="1">Yangi</option>
+              <option value="2">Moderatsiyada</option>
+              <option value="3">Tasdiqlangan</option>
+              <option value="4">Bekor qilingan</option>
+            </select>
           </div>
           <div className="sec-2">
             <p className="mb-2 mt-4 modTitle">Homiylik summasi</p>
@@ -90,6 +101,10 @@ function MyVerticallyCenteredModal(props) {
                 </button>
               </div>
             </div>
+          </div>
+          <div className="sec-3">
+            <p className="mb-2 mt-4 modTitle">Sana</p>
+            <MyApp />
           </div>
         </BrandWrapper>
       </Modal.Body>
@@ -229,7 +244,9 @@ const Homiylar = () => {
                   <p className="new">Yangi</p>
                 </td>
                 <td className="text-center">
-                  <FontAwesomeIcon icon={faEye} />
+                  <Link to={"/homiy"}>
+                    <FontAwesomeIcon icon={faEye} />
+                  </Link>
                 </td>
               </tr>
               <tr>
@@ -252,7 +269,9 @@ const Homiylar = () => {
                   <p className="moder">Moderatsiyada</p>
                 </td>
                 <td className="text-center">
-                  <FontAwesomeIcon icon={faEye} />
+                  <Link to={"/homiy"}>
+                    <FontAwesomeIcon icon={faEye} />
+                  </Link>
                 </td>
               </tr>
               <tr>
@@ -274,7 +293,9 @@ const Homiylar = () => {
                   <p className="tasdiq">Tasdiqlangan</p>
                 </td>
                 <td className="text-center">
-                  <FontAwesomeIcon icon={faEye} />
+                  <Link to={"/homiy"}>
+                    <FontAwesomeIcon icon={faEye} />
+                  </Link>
                 </td>
               </tr>
               <tr>
@@ -296,51 +317,13 @@ const Homiylar = () => {
                   <p className="cancel">Bekor qilingan</p>
                 </td>
                 <td className="text-center">
-                  <FontAwesomeIcon icon={faEye} />
+                  <Link to={"/homiy"}>
+                    <FontAwesomeIcon icon={faEye} />
+                  </Link>
                 </td>
               </tr>
             </tbody>
           </table>
-          {/* ------------- modal */}
-          <div
-            class="modal fade"
-            id="exampleModalCenter"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">
-                    Modal title
-                  </h5>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">...</div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-dismiss="modal"
-                  >
-                    Close
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    Save changes
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </BrandWrapper>
     </>

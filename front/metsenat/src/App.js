@@ -1,10 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Chart from "./components/Chart";
+import JShUser from "./components/JShUser";
 import Login from "./components/Login";
+import Student from "./components/Student";
+import StudentPlus from "./components/StudentPlus";
+import YUser from "./components/YUser";
 import Home from "./containers/Home";
+import Ariza from "./pages/Ariza";
 import Dashboard from "./pages/Dashboard";
 import Homiylar from "./pages/Homiylar";
+import Talabalar from "./pages/Talabalar";
 
 function App() {
   return (
@@ -18,10 +23,15 @@ function App() {
         />
       </head>
       <Routes>
+      <Route path="/talaba" element={<Student />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Ariza />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/homiy" element={<JShUser />} />
+        <Route path="/yshahs" element={<YUser />} />
         <Route path="/homiylar" element={<Homiylar />} />
+        <Route path="/talabalar" element={<Talabalar />} />
+        <Route path="/plus" element={<StudentPlus />} />
       </Routes>
     </div>
   );

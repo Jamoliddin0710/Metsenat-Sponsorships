@@ -54,6 +54,23 @@ const BrandWrapper = styled.div`
       margin-bottom: 10px;
     }
   }
+  .sec-3 {
+    .react-date-picker__wrapper {
+      background: rgba(224, 231, 255, 0.2);
+      border: 1px solid #e0e7ff;
+      border-radius: 10%;
+      width: 25%;
+    }
+    .modTitle {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 1.125px;
+      text-transform: uppercase;
+
+      color: #1d1d1f;
+    }
+  }
   .homiylar {
     background: #e5e5e5;
     padding: 30px 80px 350px 80px;
