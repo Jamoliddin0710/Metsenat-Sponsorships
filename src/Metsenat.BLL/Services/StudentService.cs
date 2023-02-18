@@ -50,6 +50,14 @@ public class StudentService : IStudentService
 
     public async Task<StudentView> UpdateStudentAsync(int studentId, UpdateStudentDto updateStudentDto)
     {
-        throw new Exception();
+        var student = await _studentRepository.GetStudentByIdAsync(studentId);
+
+        if (student is null)
+            throw new Exception();
+
+        student = updateStudentDto.Adapt<Student>();
+        
+       await _studentRepository.UpdateStudentAsync(student);
+        return student.Adapt<StudentView>();
     }
 }
