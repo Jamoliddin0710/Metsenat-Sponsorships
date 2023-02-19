@@ -14,5 +14,5 @@ public class CreateSponsorDto
     public string Phone { get; set; }
     [Required]
     public decimal Amount { get; set; }
-    public string OrganizationName { get; set; }
+    public string? OrganizationName { get; set; }
 }
