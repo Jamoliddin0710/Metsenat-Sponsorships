@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metsenat.Data", "Metsenat.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metsenat.BLL", "Metsenat.BLL\Metsenat.BLL.csproj", "{03EB5CE4-A09E-4649-8AD8-880680B533E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metsenat.Common", "Metsenat.Common\Metsenat.Common.csproj", "{7C8B85F8-D77B-4C17-9EF4-12C9CD901C69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{03EB5CE4-A09E-4649-8AD8-880680B533E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03EB5CE4-A09E-4649-8AD8-880680B533E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03EB5CE4-A09E-4649-8AD8-880680B533E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8B85F8-D77B-4C17-9EF4-12C9CD901C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8B85F8-D77B-4C17-9EF4-12C9CD901C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8B85F8-D77B-4C17-9EF4-12C9CD901C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8B85F8-D77B-4C17-9EF4-12C9CD901C69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
