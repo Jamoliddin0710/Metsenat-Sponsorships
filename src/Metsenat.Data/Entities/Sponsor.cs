@@ -14,4 +14,4 @@ public class Sponsor
     public virtual List<Payment>? Payments { get; set; }
     public string? OrganizationName { get; set; }
     public virtual ICollection<SponsorStudent>? SponsorStudents { get; set; }
-} 
+}

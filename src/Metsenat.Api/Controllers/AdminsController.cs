@@ -9,16 +9,17 @@ namespace Metsenat.Api.Controllers;
 public class AdminsController : ControllerBase
 {
     private readonly IStudentService _studentService;
-    
-    public AdminsController(IStudentService studentService)
+    private readonly ISponsorService _sponsorService;
+    public AdminsController(IStudentService studentService, ISponsorService sponsorService)
     {
         _studentService = studentService;
+        _sponsorService = sponsorService;
     }
 
     [HttpPost("/students")]
     public async Task<IActionResult> AddStudents([FromBody] CreateStudentDto createStudentDto)
     {
-        if(!ModelState.IsValid)
+        if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
         await _studentService.CreateStudentAsync(createStudentDto);
@@ -38,6 +39,22 @@ public class AdminsController : ControllerBase
         => Ok(await _studentService.DeleteStudentAsync(studentId));
 
     [HttpPut("/students/{studentId:int}")]
-    public async Task<IActionResult> UpdateStudent(int studentId,UpdateStudentDto updateStudentDto)
+    public async Task<IActionResult> UpdateStudent(int studentId, UpdateStudentDto updateStudentDto)
         => Ok(await _studentService.UpdateStudentAsync(studentId, updateStudentDto));
+
+    [HttpGet("/sponsors")]
+    public async Task<IActionResult> GetAllSponsors()
+        => Ok(await _sponsorService.GetSponsors());
+
+    [HttpGet("/sponsor/{sponsorId:int}")]
+    public async Task<IActionResult> GetSponsorById(int sponsorId)
+        => Ok(await _sponsorService.GetSponsorById(sponsorId));
+
+    [HttpPut("/sponsors/{sponsorId:int}")]
+    public async Task<IActionResult> UpdateSponsor(int sponsorId, UpdateSponsorDto updateSponsorDto)
+        => Ok(await _sponsorService.UpdateSponsor(sponsorId, updateSponsorDto));
+
+    [HttpDelete("/sponsors/{sponsorId:int}")]
+    public async Task<IActionResult> DeleteSponsor(int sponsorId)
+        => Ok(await _sponsorService.DeleteSponsor(sponsorId));
 }

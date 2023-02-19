@@ -15,8 +15,10 @@ builder.Services.AddDbContext<AppDbContext>(optiosns =>
     .UseLazyLoadingProxies();
 });
 
-builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IStudentRepository,StudentRepository>();
 builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<ISponsorRepository,SponsorRepository>();
+builder.Services.AddScoped<ISponsorService,SponsorService>();
 
 var app = builder.Build();
 

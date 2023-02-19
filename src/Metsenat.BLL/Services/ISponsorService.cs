@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Metsenat.BLL.DTOs;
+using Metsenat.BLL.ViewModels;
+using Metsenat.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +11,10 @@ namespace Metsenat.BLL.Services
 {
     public interface ISponsorService
     {
-        Task GetSponsor();
-        Task GetSponsorById(int sponsorId);
-        Task CreateSponsor();
-        Task UpdateSponsor();
-        Task DeleteSponsor();
+        Task<List<SponsorView>> GetSponsors();
+        Task<SponsorView> GetSponsorById(int sponsorId);
+        Task<SponsorView> CreateSponsor(CreateSponsorDto createSponsor);
+        Task<SponsorView> UpdateSponsor(int sponsorId , UpdateSponsorDto updateSponsorDto);
+        Task<bool> DeleteSponsor(int sponsorId);
     }
 }

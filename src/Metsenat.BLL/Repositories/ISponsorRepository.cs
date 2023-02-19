@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 namespace Metsenat.BLL.Repositories;
 public interface ISponsorRepository
 {
-    Task<List<SponsorView>> GetSponsor();
-    Task<SponsorView> GetSponsorById(int sponsorId);
-    Task CreateSponsor(CreateSponsorDto createsponsorDto);
-    Task UpdateSponsor(int sponsorId , UpdateSponsorDto updateSponsorDto);
-    Task DeleteSponsor(int sponsorId);
+    Task<List<SponsorView>> GetSponsors();
+    Task<Sponsor> GetSponsorById(int sponsorId);
+    Task<bool> CreateSponsor(CreateSponsorDto createsponsorDto);
+    Task<Sponsor> UpdateSponsor(int sponsorId , UpdateSponsorDto updateSponsorDto);
+    Task<bool> DeleteSponsor(int sponsorId);
     
 }
