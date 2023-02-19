@@ -9,10 +9,11 @@ namespace Metsenat.Api.Controllers;
 public class AdminsController : ControllerBase
 {
     private readonly IStudentService _studentService;
-    
-    public AdminsController(IStudentService studentService)
+    private readonly ISponsorService _sponsorService;
+    public AdminsController(IStudentService studentService, ISponsorService sponsorService)
     {
         _studentService = studentService;
+        _sponsorService = sponsorService;
     }
 
     [HttpPost("/students")]
@@ -40,4 +41,12 @@ public class AdminsController : ControllerBase
     [HttpPut("/students/{studentId:int}")]
     public async Task<IActionResult> UpdateStudent(int studentId,UpdateStudentDto updateStudentDto)
         => Ok(await _studentService.UpdateStudentAsync(studentId, updateStudentDto));
+
+    [HttpPut("/sponsors/{sponsorId:int}")]
+    public async Task<IActionResult> UpdateSponsor(int sponsorId, UpdateSponsorDto updateSponsorDto)
+        => Ok(await _sponsorService.UpdateSponsor(sponsorId, updateSponsorDto));
+
+    [HttpDelete("/sponsors/{sponsorId:int}")]
+    public async Task<IActionResult> DeleteSponsor(int sponsorId)
+    => Ok(await _sponsorService.DeleteSponsor(sponsorId));
 }

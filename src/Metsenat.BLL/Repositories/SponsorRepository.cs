@@ -14,43 +14,61 @@ namespace Metsenat.BLL.Repositories;
 public class SponsorRepository : ISponsorRepository
 {
     private readonly AppDbContext _context;
-
     public SponsorRepository(AppDbContext context)
     {
         _context = context;
     }
 
-    public async Task CreateSponsor(CreateSponsorDto createsponsorDto)
+    public async Task<bool> CreateSponsor(CreateSponsorDto createsponsorDto)
     {
-        var sponsor = createsponsorDto.Adapt<Sponsor>();
-        await _context.Sponsors.AddAsync(sponsor);
-        await _context.SaveChangesAsync();
+        try
+        {
+            var sponsor = createsponsorDto.Adapt<Sponsor>();
+            var result = await _context.Sponsors.AddAsync(sponsor);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return false;
+        }
     }
 
-    public async Task DeleteSponsor(int sponsorId)
+    public async Task<bool> DeleteSponsor(int sponsorId)
     {
-        var sponsor = await _context.Sponsors.FindAsync(sponsorId);
-        _context.Sponsors.Remove(sponsor);
-        await _context.SaveChangesAsync();
+        try
+        {
+            var sponsor = await _context.Sponsors.FirstOrDefaultAsync(sponsor => sponsor.Id == sponsorId);
+            _context.Sponsors.Remove(sponsor);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            return false;
+        }
     }
 
-    public async Task<List<SponsorView>> GetSponsor()
+    public Task<List<Sponsor>> GetSponsors()
     {
-        var sponsors = await _context.Sponsors.ToListAsync();
-        return sponsors.Adapt<List<SponsorView>>();
+        var sponsors = _context.Sponsors.ToListAsync();
+        return sponsors;
     }
 
-    public async Task<SponsorView> GetSponsorById(int sponsorId)
+    public async Task<Sponsor> GetSponsorById(int sponsorId)
     {
-        var sponsor = await _context.Sponsors.FindAsync(sponsorId);
-        return sponsor.Adapt<SponsorView>();
+        var sponsor = await _context.Sponsors.FirstOrDefaultAsync(sponsor => sponsor.Id == sponsorId);
+        return sponsor;
     }
 
-    public async Task UpdateSponsor(int sponsorId, UpdateSponsorDto updateSponsorDto)
+    public async Task<Sponsor> UpdateSponsor(int sponsorId, UpdateSponsorDto updateSponsorDto)
     {
-        var sponsor = await _context.Sponsors.FindAsync(sponsorId);
+        var sponsor = await _context.Sponsors.FirstOrDefaultAsync(sponsor => sponsor.Id == sponsorId);
         sponsor.SponsorType = updateSponsorDto.SponsorStatus;
         _context.Sponsors.Update(sponsor);
         await _context.SaveChangesAsync();
+        return sponsor;
     }
 }
