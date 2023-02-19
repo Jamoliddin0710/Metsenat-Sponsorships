@@ -21,6 +21,9 @@ public class SponsorRepository : ISponsorRepository
 
     public async Task<bool> CreateSponsor(CreateSponsorDto createsponsorDto)
     {
+        if (!int.TryParse(createsponsorDto.Phone, out var phoneNumber))
+            return false;
+       
         try
         {
             var sponsor = createsponsorDto.Adapt<Sponsor>();

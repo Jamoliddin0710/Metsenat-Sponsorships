@@ -19,12 +19,10 @@ namespace Metsenat.Api.Controllers
         [HttpPost("/sponsors")]
         public async Task<IActionResult> AddSponsor(CreateSponsorDto createSponsor)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            return Ok(await sponsorService.CreateSponsor(createSponsor));
+            await sponsorService.CreateSponsor(createSponsor);
+            return Ok();
         }
-
-
-
     }
 }

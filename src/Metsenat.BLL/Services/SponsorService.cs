@@ -18,9 +18,11 @@ public class SponsorService : ISponsorService
     }
 
     public async Task<SponsorView> CreateSponsor(CreateSponsorDto createSponsorDto)
-    {
-        var sponsor = await _repository.CreateSponsor(createSponsorDto);
-        return sponsor.Adapt<SponsorView>();
+    {    
+       var result = int.TryParse(createSponsorDto.Phone, out var phoneNumber);
+        if (!result) throw new Exception("phone value is not number");
+        await _repository.CreateSponsor(createSponsorDto);
+        return createSponsorDto.Adapt<SponsorView>();
     }
 
     public async Task<bool> DeleteSponsor(int sponsorId)
