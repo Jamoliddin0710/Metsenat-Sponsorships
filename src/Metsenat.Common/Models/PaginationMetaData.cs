@@ -1,4 +1,4 @@
-namespace Metsenat.Common.Model;
+namespace Metsenat.Common.Models;
 
 public class PaginationMetaData
 {
