@@ -51,10 +51,10 @@ public class SponsorRepository : ISponsorRepository
         }
     }
 
-    public Task<List<Sponsor>> GetSponsors()
+    public async Task<List<SponsorView>> GetSponsors()
     {
-        var sponsors = _context.Sponsors.ToListAsync();
-        return sponsors;
+        var sponsors = await _context.Sponsors.ToListAsync();
+        return sponsors.Adapt<List<SponsorView>>();
     }
 
     public async Task<Sponsor> GetSponsorById(int sponsorId)

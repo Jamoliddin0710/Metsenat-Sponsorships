@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace Metsenat.BLL.Repositories;
 public interface ISponsorRepository
 {
-    Task<List<Sponsor>> GetSponsors();
+    Task<List<SponsorView>> GetSponsors();
     Task<Sponsor> GetSponsorById(int sponsorId);
     Task<bool> CreateSponsor(CreateSponsorDto createsponsorDto);
     Task<Sponsor> UpdateSponsor(int sponsorId , UpdateSponsorDto updateSponsorDto);

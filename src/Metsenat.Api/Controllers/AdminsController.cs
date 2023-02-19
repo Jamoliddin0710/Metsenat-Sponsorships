@@ -19,7 +19,7 @@ public class AdminsController : ControllerBase
     [HttpPost("/students")]
     public async Task<IActionResult> AddStudents([FromBody] CreateStudentDto createStudentDto)
     {
-        if(!ModelState.IsValid)
+        if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
         await _studentService.CreateStudentAsync(createStudentDto);
@@ -39,8 +39,16 @@ public class AdminsController : ControllerBase
         => Ok(await _studentService.DeleteStudentAsync(studentId));
 
     [HttpPut("/students/{studentId:int}")]
-    public async Task<IActionResult> UpdateStudent(int studentId,UpdateStudentDto updateStudentDto)
+    public async Task<IActionResult> UpdateStudent(int studentId, UpdateStudentDto updateStudentDto)
         => Ok(await _studentService.UpdateStudentAsync(studentId, updateStudentDto));
+
+    [HttpGet("/sponsors")]
+    public async Task<IActionResult> GetAllSponsors()
+        => Ok(await _sponsorService.GetSponsors());
+
+    [HttpGet("/sponsor/{sponsorId:int}")]
+    public async Task<IActionResult> GetSponsorById(int sponsorId)
+        => Ok(await _sponsorService.GetSponsorById(sponsorId));
 
     [HttpPut("/sponsors/{sponsorId:int}")]
     public async Task<IActionResult> UpdateSponsor(int sponsorId, UpdateSponsorDto updateSponsorDto)
@@ -48,5 +56,5 @@ public class AdminsController : ControllerBase
 
     [HttpDelete("/sponsors/{sponsorId:int}")]
     public async Task<IActionResult> DeleteSponsor(int sponsorId)
-    => Ok(await _sponsorService.DeleteSponsor(sponsorId));
+        => Ok(await _sponsorService.DeleteSponsor(sponsorId));
 }
